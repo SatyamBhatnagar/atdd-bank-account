@@ -44,6 +44,7 @@ class AccountTest {
 	@Test
 	void depositToEmptyAccountShouldIncreaseTheBalance() {
 		Account account = emptyAccount();
+		assertThat(account.balance(), is(ZERO));
 		account.deposit(amountOf(10));
 		assertThat(account.balance(), is(amountOf(10)));
 	}
